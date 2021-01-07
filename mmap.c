@@ -12,6 +12,10 @@ int main() {
     void *second = sbrk(4096);
     void *third = sbrk(0);
 
+    //seg fault
+    int *ptr = (int *)third+1;
+    *ptr = 0xDEAD;
+
     printf("First: %p\n", first);
     printf("Second: %p\n", second);
     printf("Third: %p\n", third);
